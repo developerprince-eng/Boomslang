@@ -1,0 +1,26 @@
+{
+  "name": "boomslang-cli",
+  "version": "0.0.0",
+  "description": "AI Command Line Interface",
+  "main": "index.js",
+  "bin": {
+    "boomslang": "index.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "boomslang",
+    "machine learning",
+    "AI"
+  ],
+  "author": "Developer Princee",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.19.0",
+    "internet-available": "^1.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^5.14.1"
+  }
+}
