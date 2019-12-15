@@ -2,6 +2,7 @@
 
 const program = require(`commander`)
 const dnn = require(`./platforms/dnn/index`)
+const cnn = require(`./platforms/cnn/index`)
 const configuration = require(`./platforms/config/index`)
  
 program
@@ -25,7 +26,7 @@ program
     .option(`-g, --generate`, `Trigger Generation Operation`)
     .option(`-p, --project`)
     .action((name) => {
-        dnn.nueralnet.dnn(name)
+        cnn.nueralnet.cnn(name)
     })
     
 //CONFIGURATION
