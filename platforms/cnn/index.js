@@ -26,7 +26,7 @@ let cnn = (name) => {
             console.log(stderr)
         })
        
-        cp.execSync(`cp ~/usr/local/lib/boomslang/templates/cnn/. /$name`, (err, stdout, stderr) => {
+        cp.execSync(`cp -r /usr/lib/node_modules/boomslang-cli/templates/cnn/ ${name}`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`Copied Core Files to  ${name} Folder`)
             console.log(stderr)
@@ -46,7 +46,7 @@ let cnn = (name) => {
             console.log(stderr)
         })
        
-        cp.execSync(`cp -r /usr/lib/node_modules/boomslang-cli/templates/dnn/ ${name}`, (err, stdout, stderr) => {
+        cp.execSync(`cp -r /usr/lib/node_modules/boomslang-cli/templates/cnn/ ${name}`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`Copied Core Files to  ${name} Folder`)
             console.log(stderr)
