@@ -10,22 +10,37 @@ program
 //This is for Scafolding a project
 //DNN Nueral Network
 program
-    .usage(`[commands] <filename> <type> <options1> <options2>`)
-    .command(`dnn <name> <type>`) 
+    .usage(`[commands] <filename> `)
+    .command(`dnn <name>`) 
     .option(`-g, --generate`, `Trigger Generation Operation`)
     .option(`-p, --project`)
     .action((name) => {
         dnn.nueralnet.dnn(name)
     })
 
+//CNN Nueral Network
+program
+    .usage(`[commands] <filename> `)
+    .command(`cnn <name>`) 
+    .option(`-g, --generate`, `Trigger Generation Operation`)
+    .option(`-p, --project`)
+    .action((name) => {
+        dnn.nueralnet.dnn(name)
+    })
+    
+//CONFIGURATION
+program
+    .usage(`[commands] <config>`)
+    .command(`config`)
+    .action(()=>{
+       configuration.config.config 
+    })
 
 //CONFIGURATION
 program
-    .usage(`[commands] <config> <hostpc-name>`)
-    .command(`config <hostname>`)
-    .action((hostname)=>{
-        configuration.configuration.config(hostname)
+    .usage(`[commands] <setup>`)
+    .command(`setup`)
+    .action(()=>{
+       configuration.config.requirements
     })
-
-
 program.parse(process.argv)

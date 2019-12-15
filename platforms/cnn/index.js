@@ -17,7 +17,7 @@ const fs = require(`fs`)
 const isWin = process.platform === "win32"
 const internetAvailable = require(`internet-available`)
 
-let dnn = (name) => {
+let cnn = (name) => {
 
     let winenv = () => {
         cp.execSync(`mkdir ${name} `, (err, stdout, stderr) => {
@@ -26,7 +26,7 @@ let dnn = (name) => {
             console.log(stderr)
         })
        
-        cp.execSync(`cp ~/usr/local/lib/boomslang/templates/dnn/. /$name`, (err, stdout, stderr) => {
+        cp.execSync(`cp ~/usr/local/lib/boomslang/templates/cnn/. /$name`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`Copied Core Files to  ${name} Folder`)
             console.log(stderr)
@@ -61,4 +61,4 @@ let dnn = (name) => {
     }
 }
 
-exports.nueralnet = {dnn}
+exports.nueralnet = {cnn}
