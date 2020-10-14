@@ -25,18 +25,18 @@ let dnn = (name) => {
             console.log(stderr)
         })
        
-        cp.execSync(`cd ${name} && 
-                    type nul > main.py && 
-                    mkdir dataset && 
-                    mkdir model &&
-                    cd model && type nul > main.py && cd ..`, (err, stdout, stderr) => {
+        cp.execSync(`cd ${name} & 
+                    type nul > main.py &
+                    mkdir dataset &
+                    mkdir model &
+                    cd model & type nul > main.py & cd ..`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`Created Core Files to  ${name} Folder`)
             console.log(stderr)
         })
 
         writeFiles(name)
-        cp.exec(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using BoomSlangCLI" `, (err, stdout, stderr)=>{
+        cp.exec(`cd ${name} & git init && git add . & git commit -m "Initial Commit, Using BoomSlangCLI" `, (err, stdout, stderr)=>{
             if(err) throw err
             console.log(stdout)
             console.log(stderr)
