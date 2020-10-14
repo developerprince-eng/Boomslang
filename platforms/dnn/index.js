@@ -37,7 +37,7 @@ let dnn = (name) => {
             if(err) throw err
             if(stdout) {
                 webScaf(stdout)
-                websuccess(stdout)
+                webSuccess(stdout)
                 dpLogo(stdout)
             }
             if(stderr) console.log(stderr)
