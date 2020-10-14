@@ -6,7 +6,7 @@ const cnn = require(`./platforms/cnn/index`)
 const configuration = require(`./platforms/config/index`)
  
 program
-    .version(`0.0.2`, `-v, --version`)
+    .version(`0.0.4`, `-v, --version`)
 
 //This is for Scafolding a project
 //DNN Nueral Network

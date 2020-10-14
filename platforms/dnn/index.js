@@ -25,11 +25,7 @@ let dnn = (name) => {
             console.log(stderr)
         })
        
-        cp.execSync(`cd ${name} & 
-                    type nul > main.py &
-                    mkdir dataset &
-                    mkdir model &
-                    cd model & type nul > main.py & cd ..`, (err, stdout, stderr) => {
+        cp.execSync(`cd ${name} & type nul > main.py & mkdir dataset & mkdir model & cd model & type nul > main.py & cd ..`, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`Created Core Files to  ${name} Folder`)
             console.log(stderr)
