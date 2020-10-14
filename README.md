@@ -1,6 +1,6 @@
-# BOOMSLANG-CLI 
+# BOOMSLANG-AI-CLI 
 
-## Version 0.0.2
+## Version 0.0.3
 
 This is a command line interface for Professionals and Student to get started with prototyping AI model rapidly.
 
@@ -12,7 +12,7 @@ CNTK and Visualization Frameworks Such pyplot
 # Install Globally 
 
 ```bash 
-    npm i -g boomslang-cli
+    npm i -g boomslang-ai-cli
 ```
 
 ## Configure Boomslang
