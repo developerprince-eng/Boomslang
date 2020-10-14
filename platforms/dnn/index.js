@@ -56,16 +56,16 @@ let dnn = (name) => {
             `****************************************\n`,
             `Now Lets Do Magic using Hub to Access Github\n`,
             `****************************************\n`,
-            `Scaffolding: \x1b[33m ${stdout}`,
+            `Scaffolding: \x1b[33m ${stdout}\n`,
             `****************************************\n`,
-            `WE Have Successfully Pushed The Project \n`,
+            `WE ave Successfully Pushed The Project \n`,
             `______________^(* _ *)^________________\n`,
             `************* ENJOY!!! *****************\n`,
             `************* HAPPY CODING *************\n\n`)
     }
 
     let webSuccess = (name)=> {
-        console.log(`\x1b[36m%s\x1b[0m ${name} Project Scaffolded Successfully...\n\x1b[33m\nEnjoy!!!`);
+        console.log(`\x1b[36m${name} Project Scaffolded Successfully...\n\x1b[33m\nEnjoy!!!`);
     } 
     let unixEnv = () =>{
         cp.execSync(`mkdir ${name} `, (err, stdout, stderr) => {
