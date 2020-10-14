@@ -4,7 +4,6 @@ PROJECT ALIAS           : fluid-serpent
 PROJECT OWNER           : DeveloperPrince
 PROJECT LEAD            : DeveloperPrince (Prince Kudzai Maposa)
 AFFILIATION             : Semina
-PROJECT CONTRIBUTORS    : Tinashe Mabika
 PROJECT BRIEF           : This is command line interface which will enable developers to scaffold 
                           project of any nature which are ai based, currently focusing 
                           python.

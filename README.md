@@ -1,6 +1,6 @@
 # BOOMSLANG-CLI 
 
-## Version 0.0.13
+## Version 0.0.1
 
 This is a command line interface for Professionals and Student to get started with prototyping AI model rapidly.
 
