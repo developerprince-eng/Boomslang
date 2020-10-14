@@ -7,7 +7,7 @@ from keras import regularizers
 from keras.callbacks import ModelCheckpoint
 import matplotlib.pyplot as plt
 import matplotlib.pyplot as plt2
-# import tensorflow as tf currently no support for tensorflow manually install(make sure pc  supports tensorlfow)
+# import tensorflow as tf currently no support for tensorflow manually install(make sure pc  supports tensorflow)
 import pandas as pd 
 import os
 from os.path import realpath, abspath
@@ -126,7 +126,7 @@ class MODEL():
         #output_file("line_plot.html")
         #line_graph = figure()
         #line_graph.line([history.history['acc']], [history.history['val_acc']])
-        #show(line_graph)
+        #show(line_graph)   
 
         #Plot training & validation accuracy values
         plt.plot(history.history['accuracy'])

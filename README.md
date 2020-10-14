@@ -1,6 +1,6 @@
 # BOOMSLANG-CLI 
 
-## Version 0.0.12
+## Version 0.0.13
 
 This is a command line interface for Professionals and Student to get started with prototyping AI model rapidly.
 
@@ -34,12 +34,11 @@ CNTK and Visualization Frameworks Such pyplot
 
 ## Scafold CNN Project
 
-```bash
-    boomslang cnn <name> --generate --project
-```
+### COMING SOON
+
 ## Warnings
 
-The Current Framework doesn't have a stable support for win32 Users, we are tirelessy working to intergrate win32 users
+The Current Framework doesn't have a stable support for win32 Users, we are tirelessly working to integrate win32 users
 
 
 ### Contributors
