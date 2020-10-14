@@ -1,5 +1,5 @@
 /*
-PROJECT TITLE           : BoomSlangCLI
+PROJECT TITLE           : BoomSlang-AI-CLI
 PROJECT ALIAS           : fluid-serpent
 PROJECT OWNER           : DeveloperPrince
 PROJECT LEAD            : DeveloperPrince (Prince Kudzai Maposa)
@@ -15,10 +15,11 @@ const cp = require(`child_process`)
 const fs = require(`fs`)
 const isWin = process.platform === "win32"
 const internetAvailable = require(`internet-available`)
+const { stdout } = require("process")
 
 let dnn = (name) => {
 
-    let winenv = () => {
+    let winEnv = () => {
         cp.execSync(`mkdir ${name} `, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`CREATED FOLDER:  ${name} & Switched to Root Project Folder`)
@@ -34,12 +35,39 @@ let dnn = (name) => {
         writeFiles(name)
         cp.exec(`cd ${name} & git init && git add . & git commit -m "Initial Commit, Using BoomSlangCLI" `, (err, stdout, stderr)=>{
             if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
+            if(stdout) {
+                webScaf(stdout)
+                websuccess(stdout)
+                dpLogo(stdout)
+            }
+            if(stderr) console.log(stderr)
         })
     }
 
-    let unixenv = () =>{
+    let dpLogo = (stdout) => {
+        console.log(`   &&&&     &&&&&&&&&&&&&&&&&&&&&&&     &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&        \n   &&&&     &&&&&&&&&&&&&&&&&&&&&&&     &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&        \n   &&&&                       #&&&&     &&&&                       &&&&&        \n   &&&&                       #&&&&     &&&&                       &&&&&        \n   &&&&&&&&&&&&&&&&&&&&&&&    #&&&&     &&&&     &&&&&&&&&&&&&&&&&&&&&&&        \n   &&&&&&&&&&&&&&&&&&&&&&&    #&&&&     &&&&     &&&&&&&&&&&&&&&&&&&&&&&        \n                     &&&&&    #&&&&     &&&&     &&&&%                          \n                     &&&&&    #&&&&     &&&&     &&&&%                          \n   &&&&&&&&&&&&&&&&&&&&&&&    #&&&&     &&&&     &&&&%    &&&&&&&&&&&&&&        \n   &&&&&&&&&&&&&&&&&&&&&&&    #&&&&     &&&&     &&&&%    &&&&&&&&&&&&&&        \n   &&&&                       #&&&&     &&&&     &&&&%    &&&&&    &&&&&        \n   &&&&     \/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/\/%&&&&     &&&&     &&&&%    &&&&&    &&&&&        \n   &&&&     &&&&&&&&&&&&&&&&&&&&&&&     &&&&     &&&&%    &&&&&    &&&&&    &&&`)
+    }
+
+    //Success Console Message for Web Scaffolding
+    let webScaf = (stdout) =>{
+        console.log(
+            `****************************************\n`,
+            `#####Lets Switch up things a little#####\n`,
+            `****************************************\n`,
+            `Now Lets Do Magic using Hub to Access Github\n`,
+            `****************************************\n`,
+            `Scaffolding: \n\x1b[33m`, stdout,
+            `****************************************\n`,
+            `WE Have Successfully Pushed The Project \n`,
+            `______________^(* _ *)^________________\n`,
+            `************* ENJOY!!! *****************\n`,
+            `************* HAPPY CODING *************`)
+    }
+
+    let webSuccess = (name)=> {
+        console.log(`\x1b[36m%s\x1b[0m`, name, `Project Scaffolded Successfully...\n`,`\x1b[33m`,`Enjoy!!!`,`\x1b[0m`);
+    } 
+    let unixEnv = () =>{
         cp.execSync(`mkdir ${name} `, (err, stdout, stderr) => {
             if(err) throw err
             if(stdout) console.log(`CREATED FOLDER:  ${name} `)
@@ -58,10 +86,13 @@ let dnn = (name) => {
             console.log(stderr)
         })
 
-        cp.exec(`cd ${name} && git init && git add . && git commit -m "Initial Commit, Using BoomSlangCLI" `, (err, stdout, stderr)=>{
+        cp.exec(`cd ${name} & git init && git add . & git commit -m "Initial Commit, Using BoomSlangCLI" `, (err, stdout, stderr)=>{
             if(err) throw err
-            console.log(stdout)
-            console.log(stderr)
+            if(stdout) {
+                webscaf(stdout)
+                websuccess(stdout)
+            }
+            if(stderr) console.log(stderr)
         })
     }
 
@@ -329,10 +360,10 @@ class DATASET():\n
     }
     //CHECK FOR SYSTEM ENVIRONMENT
     if(isWin){
-        winenv()
+        winEnv()
     }
     else{
-        unixenv()
+        unixEnv()
     }
 }
 
