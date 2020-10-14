@@ -55,8 +55,8 @@ let dnn = (name) => {
             `#####Lets Switch up things a little#####\n`,
             `****************************************\n`,
             `Now Lets Do Magic using Hub to Access Github\n`,
-            `****************************************\n`,
-            `Scaffolding: \x1b[33m ${stdout}\n`,
+            `****************************************\n\n`,
+            `Scaffolding: ${stdout}\n\x1b[33m\n `,
             `****************************************\n`,
             `WE ave Successfully Pushed The Project \n`,
             `______________^(* _ *)^________________\n`,
@@ -65,7 +65,7 @@ let dnn = (name) => {
     }
 
     let webSuccess = (name)=> {
-        console.log(`\x1b[36m${name} Project Scaffolded Successfully...\n\x1b[33m\nEnjoy!!!`);
+        console.log(`\x1b[36mProject ${name} Scaffolded Successfully...\n\x1b[33m\nEnjoy!!!\n\n\n`);
     } 
     let unixEnv = () =>{
         cp.execSync(`mkdir ${name} `, (err, stdout, stderr) => {
