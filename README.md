@@ -1,6 +1,8 @@
 # BOOMSLANG-AI-CLI 
 
-## Version 0.0.19
+![DeveloperPrince](https://developerprince.herokuapp.com/static/assets/images/logo.png)
+
+## Version 0.0.20
 
 This is a command line interface for Professionals and Student to get started with prototyping AI model rapidly.
 
