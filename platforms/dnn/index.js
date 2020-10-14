@@ -104,6 +104,8 @@ let dnn = (name) => {
     }
 
     let writeFiles = (name) => {
+        const requirementsContent = `absl-py==0.8.0\nalembic==1.0.3\nastor==0.8.0\nastroid==2.0.4\natomicwrites==1.3.0\nattrs==19.1.0\nautopep8==1.4.3\nbackcall==0.1.0\nbleach==3.1.4\nbokeh==1.4.0\ncachetools==3.1.1\ncertifi==2019.3.9\ncffi==1.12.0\nClick==7.0\ncolorama==0.4.0\ncoverage==4.5.3\ncycler==0.10.0\ndecorator==4.4.0\ndefusedxml==0.6.0\ndominate==2.3.5\nentrypoints==0.3\ngast==0.2.2\ngoogle-pasta==0.1.7\ngrpcio==1.24.1\ngunicorn==19.9.0\nh5py==2.10.0\nhttplib2==0.18.0\nimportlib-metadata==0.17\nipykernel==5.1.1\nipython==7.5.0\nipython-genutils==0.2.0\nipywidgets==7.4.2\nisort==4.3.4\nitsdangerous==1.1.0\njedi==0.13.3\nJinja2==2.10.3\njoblib==0.14.0\njsonschema==3.0.1\njupyter==1.0.0\njupyter-client==5.2.4\njupyter-console==6.0.0\njupyter-core==4.4.0\nKeras==2.3.1\nKeras-Applications==1.0.8\nKeras-Preprocessing==1.1.0\nkiwisolver==1.1.0\nlazy-object-proxy==1.3.0\nMako==1.1.0\nMarkdown==3.1.1\nMarkupSafe==1.1.1\nmatplotlib==3.1.2\nmccabe==0.6.1\nmistune==0.8.4\nmore-itertools==7.0.0\nnbconvert==5.5.0\nnbformat==4.4.0\nnose==1.3.7\nnotebook==5.7.8\nnumpy==1.17.3\nolefile==0.46\nopt-einsum==3.1.0\npackaging==19.2\npandas==0.25.1\npandocfilters==1.4.2\nparso==0.4.0\npexpect==4.7.0\npickleshare==0.7.5\nPillow==7.1.0\npluggy==0.12.0\nprometheus-client==0.6.0\nprompt-toolkit==2.0.9\nprotobuf==3.10.0\npsycopg2==2.7.6.1\nptyprocess==0.6.0\npy==1.8.0\npy4j==0.10.7\npyasn1==0.4.5\npyasn1-modules==0.2.5\npycparser==2.19\nPygments==2.4.2\npylint==2.1.1\npyparsing==2.4.5\npyrsistent==0.15.2\nPySide2==5.12.2\npytest==4.6.2\npython-dateutil==2.8.1\npython-editor==1.0.3\npytz==2019.3\nPyYAML==5.1.2\npyzmq==18.0.1\nqtconsole==4.5.1\nrsa==4.0\nscikit-learn==0.21.3\nscipy==1.3.1\nseaborn==0.9.0\nSend2Trash==1.5.0\nshiboken2==5.12.2\nsix==1.13.0\nsklearn==0.0\nSQLAlchemy==1.3.11\ntensorboard==2.0.0\ntensorflow-estimator==2.0.0\ntermcolor==1.1.0\nterminado==0.8.2\ntestpath==0.4.2\nTheano==1.0.4\ntornado==6.0.3\ntraitlets==4.3.2\ntyped-ast==1.1.0\nuritemplate==3.0.0\nvirtualenv==16.6.1\nvisitor==0.1.3\nwcwidth==0.1.7\nwebencodings==0.5.1\nWerkzeug==0.16.0\nwidgetsnbextension==3.4.2\nwincertstore==0.2\nwrapt==1.11.2\nzipp==0.5.1\n`
+
         const modelContent = 
 `
 from __future__ import absolute_import, division, print_function\n
@@ -346,6 +348,12 @@ class DATASET():\n
 \t\t\tx_train, x_test, y_train, y_test = train_test_split(input_x, input_y ,test_size = 0.2, random_state = 0)\n\n
 \t\t\treturn input_x, x_train, x_test, y_train, y_test\n\n
 `
+
+        const requirementsFileStream = fs.createWriteStream(`${name}/requirements.xt`)
+        requirementsFileStream.once(`open`, function(fd){
+            requirementsFileStream.write(requirementsContent)
+            requirementsFileStream.end()
+        })
 
         const modelFileStream = fs.createWriteStream(`${name}/model/main.py`)
         modelFileStream.once(`open`, function(fd){
